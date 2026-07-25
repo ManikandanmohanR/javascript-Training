@@ -275,7 +275,7 @@ function addEmployee(name, id, salary, experience, skills) {
     employee.experience = experience;
     employee.skills = skills;
 
-    console.log("Employee details updated successfully!");
+    // console.log("Employee details updated successfully!");
 }
 
 addEmployee("surya", 102, 40000, 6, ["javaScript", "react", "node.js"]);
