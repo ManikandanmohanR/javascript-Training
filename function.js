@@ -1,284 +1,238 @@
-//Task 1 ---> Student Registration Form
-console.log("==========Student Register Form==========");
+// ## 1. Named Function
 
-let studentName = prompt("Enter the student Name:");
-let age = prompt("Emter your age:");
-let department = prompt("enter the department:");
-let cgpa = prompt("enter the cgpa:");
+// A ** named function** is declared using the `function` keyword with a function name.
 
-console.log("Student Name:", studentName);
-console.log("Age:", age);
-console.log("Department:", department);
-console.log("CGPA:", cgpa);
-
-//Task 2 ---> Employee Details
-
-let employeeDetails = {
-    employeeID: prompt("enter your emp id:"),
-    employeeName: prompt("enter your emp name:"),
-    employeeDept: prompt("enter your emp dept:"),
-    employeeSalary: prompt("enter your emp salary:")
-}
-console.log("==========Employee Details=============");
-console.log(employeeDetails.employeeName);
-console.log(employeeDetails.employeeSalary);
-
-//Task 3: Shopping Cart
-
-let products = ["Laptop", "Mouse", "Keyboard", "Monitor", "Headset"];
-
-console.log("===========Shopping Cart============");
-console.log(products[0]);
-console.log(products[products.length - 1]);
-console.log(products.length);
-
-//Task 4 ---> Student Marks
-
-let tamil = 90;
-let eng = 70;
-let maths = 95;
-let science = 100;
-let social = 99;
-
-let total = tamil + eng + maths + science + social;
-let average = total / 5;
-
-console.log("============Student Marks============")
-console.log("Total Marks:", total);
-console.log("Average Marks:", average);
-
-
-//Task 5 ---> Age Checker
-
-console.log("===========Age Checker============")
-
-let voteAge = prompt("enter your age for vote");
-
-if (voteAge >= 18) {
-    console.log("Eligible for votes!");
-} else {
-    console.log("Not eligiable for votes!");
+// ```javascript
+function greet() {
+    console.log("Hello!");
 }
 
+greet();
+// ```
 
-//Task 6 ---> Login System
+//     ** Explanation:**
 
-console.log("==========Login System=========");
+// * Has a name(`greet`).
+// * Can be called multiple times.
+// * Hoisted, so it can be called before its declaration.
 
-let user = prompt("Enter username:");
-let pass = prompt("Enter password:");
+// ---
 
-let obj = {
-    username: "Mani",
-    password: "12345"
+// ## 2. Anonymous Function
+
+// An ** anonymous function** is a function without a name.It is usually assigned to a variable or passed as an argument.
+
+// ```javascript
+const greet = function () {
+    console.log("Hello!");
 };
 
-if (user === obj.username && pass === obj.password) {
-    console.log("login success");
-} else {
-    console.log("invalid");
-}
+greet();
+// ```
 
+//     ** Explanation:**
 
-//Task 7 ---> Calculator
+// * Has no function name.
+// * Commonly used as callback functions.
+// * Not hoisted like function declarations.
 
-console.log("=========Calculator==========");
+// ---
 
-let a = 10;
-let b = 10;
+// ## 3. Arrow Function(ES6)
 
-console.log(a + b);
-console.log(a - b);
-console.log(a * b);
-console.log(a / b);
-console.log(a % b);
+// An ** arrow function** provides a shorter syntax for writing functions.
 
-//Task 8 ---> Electricity Bill
-
-console.log("=========Electricity Bill========")
-
-let customerName = prompt("enter the customer name");
-let unitsConsumed = prompt("enter the used unit");
-let totalBill = 0;
-
-if (unitsConsumed <= 100) {
-    console.log("0-100 units → ₹2/unit");
-    totalBill = unitsConsumed * 2;
-} else if (unitsConsumed <= 200) {
-    console.log("101–200 units → ₹4 / unit");
-    totalBill = unitsConsumed * 4;
-} else {
-    console.log("Above 200 → ₹6 / unit");
-    totalBill = unitsConsumed * 6;
-}
-
-console.log("Bill Amount : ", totalBill);
-console.log("Customer Name : ", customerName);
-console.log("Units : ", unitsConsumed);
-
-
-//Task 9 ---> Employee Salary
-
-console.log("==========Employee Salary==========")
-
-let salary = 20000;
-let bonusEmp = 0;
-
-if (salary >= 50000) {
-    bonusEmp = 5000;
-} else if (salary >= 30000) {
-    bonusEmp = 3000
-} else {
-    bonusEmp = 2000;
-}
-
-console.log("gross salary : ", salary + bonusEmp);
-
-
-//Task 10 ---> Movie Ticket Price
-
-console.log("=========Movie Ticket Price==========")
-
-let ticketPrice = 250;
-let count = 3;
-let totalPrice = ticketPrice * count;
-
-console.log("Total Amount: ", totalPrice);
-
-
-//Task 11 ---> Product Discount
-
-console.log("===========Product Discount==========")
-
-let productName = "laptop";
-let productPrice = 50000;
-let totalDiscount = 0;
-if (productPrice > 5000) {
-    console.log("price above ₹5000 → 20% Discount");
-    totalDiscount = productPrice * 20 / 100
-
-} else {
-    console.log("Otherwise → 10 % Discount");
-    totalDiscount = productPrice * 10 / 100
-}
-let finalPrice = productPrice - totalDiscount;
-console.log("Original price : ", productPrice);
-console.log("Discount : ", totalDiscount);
-console.log("final price : ", finalPrice);
-
-
-//Task 12 ---> Function Practice
-
-console.log("=========Function Practice==========")
-
-function studentDetails(name, dept, cgpa) {
-    console.log("Student Name : ", name);
-    console.log("Student Department : ", dept);
-    console.log("Student CGPA : ", cgpa);
-}
-
-studentDetails("mani", "IT", 7);
-
-
-//Task 13 ---> Bank Balance
-
-console.log("=========Bank Balance==========")
-
-function IOB(acNAme, curBal, withdraw) {
-    let remainingBal = curBal - withdraw;
-    console.log("Remaining Balance : ", remainingBal);
-}
-IOB("mani", 35000, 3900);
-
-
-//Task 14 ---> Mobile Recharge
-
-console.log("=========Mobile Recharge==========")
-
-function mobile(mobnum, rechargeAmnt) {
-    if (mobnum === 8526538112 && rechargeAmnt > 0) {
-        console.log("Recharge Successful");
-    } else {
-        console.log("Recharge unSuccessful");
-    }
-    console.log("Mobile Number : ", mobnum);
-    console.log("Recharge Amount : ", rechargeAmnt);
-
-
-}
-
-mobile(Number(prompt("enter mobileNum : ")), Number(prompt("enter RechargeAmnt: ")));
-
-
-//Task 15: Restaurant Bill
-
-function restaurant(foodName, quantity, priceRes) {
-    console.log("=======invoice========");
-    console.log("Food Name : ", foodName);
-    console.log("Quantity : ", quantity);
-    let totalBill = quantity * priceRes;
-    console.log("Total Amnt : ", totalBill);
-}
-restaurant(prompt("enter Food Name :"), prompt("enter quantity:"), prompt("entert price"));
-
-
-//Mini project 
-
-console.log("=======Mini project========");
-
-//Add Employee Details
-let employee = {
-    name: "Manikandan M",
-    id: "stk-2026-4016",
-    salary: 20000,
-    experience: 2,
-    skills: ["java", "pyhhon", "aws"]
+// ```javascript
+const add = (a, b) => {
+    return a + b;
 };
-let bonusSal = 0;
 
-//Display Employee Details
-function displayEmployee() {
-    console.log("=============Employee Details==============");
-    console.log("Name:", employee.name);
-    console.log("ID:", employee.id);
-    console.log("Skills:", employee.skills);
+console.log(add(5, 3));
+// ```
+
+//     ** Short form:**
+
+//         ```javascript
+// const add = (a, b) => a + b;
+// ```
+
+//         ** Explanation:**
+
+// * Uses`=>` syntax.
+// * Short and easy to write.
+// * Does not have its own`this`.
+
+// ---
+
+// ## 4. Callback Function
+
+// A ** callback function** is a function passed as an argument to another function and executed later.
+
+// ```javascript
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
 }
 
-//Calculate Salary
-function calculateSalary() {
-    if (employee.salary >= 50000) {
-        bonusSal = 5000
-    }
-    else {
-        bonusSal = 3000;
-    }
-    let totalSalary = employee.salary + bonusSal;
-    console.log("Total Salary: $" + totalSalary);
+function bye() {
+    console.log("Goodbye!");
 }
 
-//Check Employee Experience (using if...else)
-function checkExperience() {
-    if (employee.experience >= 5 && employee.salary >= 40000) {
-        console.log("senior software developer");
-    } else if (employee.experience >= 3 && employee.salary >= 25000) {
-        console.log("software developer");
-    } else {
-        console.log("Fresher Employee");
-    }
+greet("John", bye);
+// ```
+
+//     ** Output:**
+
+//         ```
+// Hello John
+// Goodbye!
+// ```
+
+//         ** Explanation:**
+
+// * Passed as an argument.
+// * Executed after another task finishes.
+// * Common in asynchronous programming.
+
+// ---
+
+// ## 5. Higher - Order Function(HOF)
+
+// A ** Higher - Order Function ** is a function that takes another function as an argument or returns a function.
+
+// ```javascript
+function calculate(a, b, operation) {
+    return operation(a, b);
 }
 
-//update employee
-function addEmployee(name, id, salary, experience, skills) {
-    employee.name = name;
-    employee.id = id;
-    employee.salary = salary;
-    employee.experience = experience;
-    employee.skills = skills;
-
-    console.log("Employee details updated successfully!");
+function multiply(x, y) {
+    return x * y;
 }
 
-addEmployee("surya", 102, 40000, 6, ["javaScript", "react", "node.js"]);
-displayEmployee();
-calculateSalary();
-checkExperience();
+console.log(calculate(5, 4, multiply));
+// ```
+
+//     ** Output:**
+
+//         ```
+// 20
+// ```
+
+//         ** Examples of HOFs:**
+
+// * `map()`
+//             * `filter()`
+//             * `reduce()`
+//             * `forEach()`
+
+// ---
+
+// ## 6. Currying
+
+//     ** Currying ** converts a function with multiple arguments into a sequence of functions, each taking one argument.
+
+// ```javascript
+function multiply(a) {
+    return function (b) {
+        return a * b;
+    };
+}
+
+console.log(multiply(5)(4));
+// ```
+
+//         ** Output:**
+
+//             ```
+// 20
+// ```
+
+//             ** Arrow Function Version:**
+
+//                 ```javascript
+const multiply = a => b => a * b;
+
+console.log(multiply(5)(4));
+// ```
+
+//                 ** Explanation:**
+
+// * Breaks functions into smaller functions.
+// * Useful for function reuse and partial application.
+
+// ---
+
+// ## 7. IIFE(Immediately Invoked Function Expression)
+
+// An ** IIFE ** executes immediately after it is defined.
+
+// ```javascript
+(function () {
+    console.log("IIFE executed");
+})();
+
+
+//     ** Arrow Function IIFE:**
+
+//         ```javascript
+// (() => {
+//   console.log("Arrow IIFE");
+// })();
+// ```
+
+//         ** Explanation:**
+
+// * Runs only once.
+// * Creates a private scope.
+// * Prevents global variable pollution.
+
+// ---
+
+// ## 8. Generator Function
+
+// A ** generator function** can pause and resume execution using the `yield` keyword.
+
+// ```javascript
+function* numbers() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const gen = numbers();
+
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+// ```
+
+//     ** Output:**
+
+//         ```javascript
+// { value: 1, done: false }
+// { value: 2, done: false }
+// { value: 3, done: false }
+// { value: undefined, done: true }
+// ```
+
+//         ** Explanation:**
+
+// * Declared using`function*`.
+// * Uses`yield` to return values one at a time.
+// * Useful for iterators, lazy loading, and handling large datasets.
+
+// ---
+
+// ## Quick Revision Table
+
+//     | Function Type | Purpose |
+// | ------------------------------- | ----------------------------------------------------------------------------- |
+// | ** Named Function **              | Reusable function with a name.                                                |
+// | ** Anonymous Function **          | Function without a name, often assigned to variables or used as callbacks.    |
+// | ** Arrow Function **              | Short ES6 syntax; no own`this`.                                              |
+// | ** Callback Function **           | Passed to another function and executed later.                                |
+// | ** Higher - Order Function(HOF) ** | Takes a function as an argument or returns a function.                        |
+// | ** Currying **                    | Converts a multi - argument function into a chain of single - argument functions. |
+// | ** IIFE **                        | Executes immediately after it is defined.                                     |
+// | ** Generator Function **          | Produces values one at a time using`yield`.                                  |
