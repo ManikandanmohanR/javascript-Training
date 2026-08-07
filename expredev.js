@@ -161,25 +161,26 @@ asyncFunction1();
 
 
 
-// const apiUrl = "https://jsonplaceholder.typicode.com/posts";
+const apiUrl = "https://jsonplaceholder.typicode.com/posts";
 
-// fetch(apiUrl)
-//     .then((response) => {
-//         if (!response.ok) {
-//             throw new Error("Network response was not ok");
-//         }
-//         return response.json();
-//     })
-//     .then((data) => {
-//         console.log("Data fetched from API:", data);
-//         data.forEach((post) => {
-//             console.log("Post title:", post.title);
-//         });
-//     })
-//     .catch((error) => {
-//         console.error("Error fetching data from API:", error);
-//     }).finally(() => {
-//         console.log("Fetch operation completed");
-//     });
+fetch(apiUrl)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then((data) => {
+        console.log("Data fetched from API:", data);
+        data.forEach((post) => {
+            console.log("Post title:", post.title);
+        });
+    })
+    .catch((error) => {
+        console.error("Error fetching data from API:", error);
+    }).finally(() => {
+        console.log("Fetch operation completed");
+    });
+
 
 
